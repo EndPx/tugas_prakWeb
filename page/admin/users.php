@@ -57,7 +57,7 @@
 			<div class="card text-white bg-secondary mb-3">
 				<div class="card-header">
                     <center>
-					<h2>Data User</h2> 
+					<h2 class="text-center">Data User</h2> 
                     <center>
                     <a class="btn btn-primary " href="tambah.php" role="button">Tambah Data</a>                    
 				</div>
@@ -85,7 +85,7 @@
 									<td><?php echo $data['password']; ?></td>
 									<td><?php echo $data['role']; ?></td>
 									<td>
-										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
+										<a class="btn btn-success" href="edit.php?id=<?php echo $data['id'] ?>">Edit</a>
 										<a class="btn btn-danger" href="hapus_user.php?id=<?php echo $data['id'] ?>">Delete</a>
 									</td>
 								</tr>

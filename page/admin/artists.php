@@ -71,17 +71,26 @@
 							<?php
 							include '../../core/koneksi.php';
 							$query = mysqli_query($konek, "select * from artists");
-							while ($data = mysqli_fetch_array($query)) { ?>
-								<tr>
-									<td><?php echo $data['id']; ?></td>
-									<td><?php echo $data['name']; ?></td>
+                            while ($data = mysqli_fetch_array($query)) { ?>
+                                <tr>
+                                    <td><?php echo $data['id']; ?></td>
+                                    <td><?php echo $data['name']; ?></td>
                                     <td><img src="../../poster/<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
-									<td>
-										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="hapus_artis.php?id=<?php echo $data['id'] ?>">Delete</a>
-									</td>
-								</tr>
-							<?php } ?>
+                                    <td>
+                                        <a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
+                                        <?php
+                                            $queri = mysqli_query($konek, "SELECT artists.id AS artis_id, songs.*, artists.*
+                                            FROM songs
+                                            INNER JOIN artists ON songs.artist_id = artists.id
+                                            WHERE artists.id='".$data['id']."'");
+                                            if ($queri->num_rows == 0) {
+                                                echo '<a class="btn btn-danger" href="hapus_artis.php?id='.$data['id'].'">Delete</a>';
+                                            }
+                                        ?>
+                                        
+                                    </td>
+                                </tr>
+                            <?php } ?>
 						</tbody>
 					</table>
 				</div>

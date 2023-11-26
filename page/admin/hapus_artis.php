@@ -9,6 +9,6 @@ if($query)
 }
 else
 {
-echo "Proses hapus gagal";
+    echo "Proses hapus gagal";
 }
 ?>

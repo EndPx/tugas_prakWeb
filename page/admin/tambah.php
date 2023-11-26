@@ -48,45 +48,52 @@
     </header>
     
     <main>
-		<div class="container mt-5">
-			<div class="card text-white bg-secondary mb-3">
-				<div class="card-header">
-                    <center>
-					<h2>Tambah Data</h2> 
-                    <center>
-                                       
-				</div>
-				<div class="card-body-dark">
+    <div class="container mt-5">
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">
+                <center>
+                    <h2>Tambah Data</h2> 
+                </center>
+            </div>
+            <div class="card-body">
                 <form method="POST" action="input.php">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan Username">
-    
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Email</label>
-    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="text" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Role</label>
-    <input type="text" name="role" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan Role">
-  </div>
-  <br>
-  <center>
-  <button type="login" value="login" class="btn btn-primary">Tambah</button>
-</form>
-				</div>
-			</div>
-		</div>
-    </main>
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp"
+                               placeholder="Masukkan Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                               placeholder="Masukkan Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="text" name="password" class="form-control" id="password" aria-describedby="emailHelp"
+                               placeholder="Masukkan Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select name="role" class="form-control" id="role" aria-describedby="emailHelp">
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+                    <br>
+                    <center>
+                        <button type="login" value="login" class="btn btn-primary">Tambah</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer class="bg-dark">
+        <div class="container text-center text-white">
+            <p>Copyright &copy; <?=date("Y")?></p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

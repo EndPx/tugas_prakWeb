@@ -81,9 +81,14 @@
                                     }
                                     ; ?></td>
 									<td>
-										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="hapus_kategori.php?id=<?php echo $data['id'] ?>">Delete</a>
-									</td>
+                                        <?php 
+                                        if ($data['disabled']=='0'){
+                                            echo '<a class="btn btn-danger" href="../../core/disable.php?id='.$data['id'].'">Disable</a>';
+                                        }else{
+                                            echo '<a class="btn btn-success" href="../../core/active.php?id='.$data['id'].'">Active</a>';
+                                        }
+                                        ?>
+                                    </td>
 								</tr>
 							<?php } ?>
 						</tbody>
