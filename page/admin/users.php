@@ -86,7 +86,7 @@
 									<td><?php echo $data['role']; ?></td>
 									<td>
 										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="../../core/hapus.php?id=<?php echo $data['id'] ?>">Delete</a>
+										<a class="btn btn-danger" href="hapus_user.php?id=<?php echo $data['id'] ?>">Delete</a>
 									</td>
 								</tr>
 							<?php } ?>

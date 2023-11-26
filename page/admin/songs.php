@@ -36,8 +36,8 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                
+                                
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -51,7 +51,10 @@
 		<div class="container mt-5">
 			<div class="card text-white bg-secondary mb-3">
 				<div class="card-header">
-					<h2>Menu List</h2>
+                <center>
+					<h2>Data Song</h2> 
+                    <center>
+                    <a class="btn btn-primary " href="tambah_song.php" role="button">Tambah Lagu</a>
 				</div>
 				<div class="card-body">
 					<table class="table table-dark table-striped table-hover">
@@ -69,14 +72,15 @@
 						</thead>
 						<tbody>
                         <?php
+                        
                         include '../../core/koneksi.php';
-                        $query = mysqli_query($konek, "SELECT songs.*, artists.*, categories.* 
+                        $query = mysqli_query($konek, "SELECT songs.id AS song_id, songs.*, artists.*, categories.* 
                         FROM songs 
                         INNER JOIN artists ON songs.artist_id = artists.id 
                         INNER JOIN categories ON songs.category_id = categories.id");
                         while ($data = mysqli_fetch_array($query)) { ?>
                             <tr>    
-                                <td><?php echo $data['id']; ?></td>
+                                <td><?php echo $data['song_id']; ?></td>
                                 <td><?php echo $data['title']; ?></td>
                                 <td><?php echo $data['category']; ?></td>
                                 <td><?php echo $data['name']; ?></td>
@@ -87,7 +91,7 @@
                                 <td><?php echo $data['views']; ?></td>
                                 <td>
                                     <a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-                                    <a class="btn btn-danger" href="../../core/hapus.php?id=<?php echo $data['id'] ?>">Delete</a>
+                                    <a class="btn btn-danger" href="hapus_song.php?song_id=<?php echo $data['song_id'] ?>">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>
