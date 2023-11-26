@@ -41,8 +41,8 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                               
+                                
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -56,7 +56,10 @@
 		<div class="container mt-5">
 			<div class="card text-white bg-secondary mb-3">
 				<div class="card-header">
-					<h2>Menu List</h2>
+                    <center>
+					<h2>Data User</h2> 
+                    <center>
+                    <a class="btn btn-primary " href="tambah.php" role="button">Tambah Data</a>                    
 				</div>
 				<div class="card-body">
 					<table class="table table-dark table-striped table-hover">
