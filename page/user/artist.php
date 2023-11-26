@@ -99,6 +99,11 @@
          ?>
          <div class="row">
             <?php
+            $query = mysqli_query($konek, "SELECT songs.id AS song_id, categories.id AS category_id,artists.image AS artist_image, songs.*, artists.*, categories.* 
+            FROM songs 
+            INNER JOIN artists ON songs.artist_id = artists.id 
+            INNER JOIN categories ON songs.category_id = categories.id
+            WHERE artists.id = $id");
             if ($query->num_rows > 0) {
                 while($row = $query->fetch_assoc()) {
                     echo '

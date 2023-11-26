@@ -70,13 +70,13 @@
 						<tbody>
                         <?php
                         include '../../core/koneksi.php';
-                        $query = mysqli_query($konek, "SELECT songs.*, artists.*, categories.* 
+                        $query = mysqli_query($konek, "SELECT songs.id AS song_id, songs.*, artists.*, categories.* 
                         FROM songs 
                         INNER JOIN artists ON songs.artist_id = artists.id 
                         INNER JOIN categories ON songs.category_id = categories.id");
                         while ($data = mysqli_fetch_array($query)) { ?>
                             <tr>    
-                                <td><?php echo $data['id']; ?></td>
+                                <td><?php echo $data['song_id']; ?></td>
                                 <td><?php echo $data['title']; ?></td>
                                 <td><?php echo $data['category']; ?></td>
                                 <td><?php echo $data['name']; ?></td>
