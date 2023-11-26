@@ -19,7 +19,7 @@
         }
 
         body {
-            background: url("background-log.jpg") no-repeat;
+            background: url("upload/background-log.jpg") no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -28,50 +28,44 @@
 
 
 <body>
-<?php
-    include 'import.php';
-    $id = $_GET['id'];
-    $query = mysqli_query($konek, "SELECT * from users where
-    id=$id");
-    $data = mysqli_fetch_array($query);
-?>
-
-    <nav class="navbar bg-white">
+    <nav class="navbar">
     <div class="container-fluid">
         <a class="navbar-brand">
-        <img src="spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
+        <img src="upload/spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
         <div class="d-flex" id="navbarNav">
             <a class="btn btn-primary" href="login.php">Login</a>
-            
         </div>
     </div>
     </nav>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <form class="bg-white p-5 m-5 rounded" method="POST" action="update_pass.php">
+            
+        <form class="bg-white p-5 m-5 rounded" method="POST" action="core/update_pass.php">
             <h1 class="text-center">Ganti Password</h1>
             <div>
                 <?php
                 if (isset($_GET['pesan'])) {
-                    if ($_GET['pesan'] == "gagal") {
-                        echo "Username and password are incorrect!";
-                    } else if ($_GET["pesan"] == "logout") {
-                        echo "You have successfully logged out!";
-                    } else if ($_GET["pesan"] == "belumlogin") {
-                        echo "Please log in first";
+                    if ($_GET['pesan'] == "salah") {
+                        echo "Username and email are not matching";
                     }
                 }
                 ?>
             </div>
-            <input type="hidden" name="id" value="<?php echo $data['id']; ?>"></br>
-            <div class="form-group">
+            <div class="form-group pb-2">
                 <label for="username">Username</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="username" placeholder="Masukkan Username Sebelumnya" required />
+                    <input type="text" class="form-control" name="username" placeholder="Masukkan Username" required />
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
+            <div class="form-group pb-2">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="email" class="form-control" type="email" name="email" placeholder="Masukkan email" required>
+                </div>
+            </div>
+
+            <div class="form-group pb-2">
+                <label for="password">New Password</label>
                 <div class="input-group">
                     <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password Baru" required />
                     <div class="input-group-append">
@@ -81,7 +75,7 @@
                     </div>
                 </div>
             </div>
-<br>
+            <br>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary btn-block">Ganti</button>
             </div>

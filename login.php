@@ -50,6 +50,8 @@
                         echo "You have successfully logged out!";
                     } else if ($_GET["pesan"] == "belumlogin") {
                         echo "Please log in first";
+                    }else if ($_GET["pesan"] == "ganti") {
+                        echo "Successfully change password";
                     }
                 }
                 ?>

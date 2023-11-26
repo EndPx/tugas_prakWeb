@@ -85,7 +85,7 @@ $id=$_GET['id'];
         <div class="row">
             <?php
             include '../../core/koneksi.php';
-            $query = mysqli_query($konek, "SELECT songs.id AS song_id, categories.id AS category_id, songs.*, artists.*, categories.* 
+            $query = mysqli_query($konek, "SELECT songs.id AS song_id, categories.id AS category_id,songs.image AS song_image, songs.*, artists.*, categories.* 
             FROM songs 
             INNER JOIN artists ON songs.artist_id = artists.id 
             INNER JOIN categories ON songs.category_id = categories.id
@@ -96,7 +96,7 @@ $id=$_GET['id'];
                     echo '
                         <div class="col-md-3 mb-3">
                             <div class="card" style="width: 18rem;">
-                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../poster'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
+                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../poster/'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row['title'].'</h5>
                                     <p class="card-text">Artist: '.$row['name'].'</p>

@@ -19,7 +19,7 @@
         }
 
         body {
-            background: url("background-log.jpg") no-repeat;
+            background: url("upload/background-log.jpg") no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -28,10 +28,10 @@
 
 
 <body>
-    <nav class="navbar bg-white">
+    <nav class="navbar">
     <div class="container-fluid">
         <a class="navbar-brand">
-        <img src="spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
+        <img src="upload/spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
         <div class="d-flex" id="navbarNav">
             <a class="btn btn-primary" href="login.php">Login</a>
             
@@ -39,21 +39,8 @@
     </div>
     </nav>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <form class="bg-white p-5 m-5 rounded" method="POST" action="ceklogin.php">
+        <form class="bg-white p-5 m-5 rounded" method="POST" action="core/cekRegister.php">
             <h1 class="text-center">Sign Up</h1>
-            <div>
-                <?php
-                if (isset($_GET['pesan'])) {
-                    if ($_GET['pesan'] == "gagal") {
-                        echo "Username and password are incorrect!";
-                    } else if ($_GET["pesan"] == "logout") {
-                        echo "You have successfully logged out!";
-                    } else if ($_GET["pesan"] == "belumlogin") {
-                        echo "Please log in first";
-                    }
-                }
-                ?>
-            </div>
 
             <div class="form-group">
                 <label for="username">Username</label>
@@ -73,6 +60,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="email" class="form-control" type="email" name="email" placeholder="Masukkan email" required>
+                </div>
+            </div>
+            
 <br>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
