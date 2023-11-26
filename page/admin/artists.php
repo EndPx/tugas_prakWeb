@@ -71,7 +71,7 @@
 								<tr>
 									<td><?php echo $data['id']; ?></td>
 									<td><?php echo $data['name']; ?></td>
-                                    <td><img src="../../<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
+                                    <td><img src="../../poster/<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
 									<td>
 										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
 										<a class="btn btn-danger" href="../../core/hapus.php?id=<?php echo $data['id'] ?>">Delete</a>

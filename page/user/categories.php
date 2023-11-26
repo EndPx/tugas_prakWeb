@@ -96,7 +96,7 @@ $id=$_GET['id'];
                     echo '
                         <div class="col-md-3 mb-3">
                             <div class="card" style="width: 18rem;">
-                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
+                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../poster'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row['title'].'</h5>
                                     <p class="card-text">Artist: '.$row['name'].'</p>

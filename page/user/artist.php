@@ -91,7 +91,7 @@
                     <div>
                         <h1 class="text-center">Artist Profile</h1>
                         <p class="text-center">'.$artis['name'].'</p>
-                        <div><img class="card-img-top mx-auto d-block" src="../../'.$artis['artist_image'].'" alt="Card image cap" style="height: 500px;width:300px;object-fit: cover;"></div>
+                        <div><img class="card-img-top mx-auto d-block" src="../../poster/'.$artis['artist_image'].'" alt="Card image cap" style="height: 500px;width:300px;object-fit: cover;"></div>
                         <p class="text-center">'.$artis['bio'].'</p>
                         <h2>Song:</h2>
                     </div>
@@ -104,7 +104,7 @@
                     echo '
                         <div class="col-md-3 mb-3">
                             <div class="card" style="width: 18rem;">
-                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
+                                <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../poster/'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row['title'].'</h5>
                                     <p class="card-text">Artist: '.$row['name'].'</p>

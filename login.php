@@ -19,7 +19,7 @@
         }
 
         body {
-            background: url("background-log.jpg") no-repeat;
+            background: url("upload/background-log.jpg") no-repeat;
             background-size: cover;
             background-position: center;
         }
@@ -28,10 +28,10 @@
 
 
 <body>
-    <nav class="navbar bg-white">
+    <nav class="navbar">
     <div class="container-fluid">
         <a class="navbar-brand">
-        <img src="spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
+        <img src="upload/spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
         <div class="d-flex" id="navbarNav">
             
             <a class="btn btn-primary" href="register.php">Sign Up</a>
@@ -39,7 +39,7 @@
     </div>
     </nav>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <form class="bg-white p-5 m-5 rounded" method="POST" action="ceklogin.php">
+        <form class="bg-white p-5 m-5 rounded" method="POST" action="core/ceklogin.php">
             <h1 class="text-center">Login</h1>
             <div>
                 <?php

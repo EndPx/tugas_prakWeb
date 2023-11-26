@@ -80,9 +80,9 @@
                                 <td><?php echo $data['title']; ?></td>
                                 <td><?php echo $data['category']; ?></td>
                                 <td><?php echo $data['name']; ?></td>
-                                <td><img src="../../<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
+                                <td><img src="../../poster/<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
                                 <td><audio controls>
-                                    <source src="../../<?=$data['file']?>" type="audio/mpeg">
+                                    <source src="../../musik/<?=$data['file']?>" type="audio/mpeg">
                                     </audio></td>
                                 <td><?php echo $data['views']; ?></td>
                                 <td>

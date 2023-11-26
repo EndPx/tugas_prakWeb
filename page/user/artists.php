@@ -88,7 +88,7 @@
                     echo '
                         <div class="col-md-3 mb-3">
                             <div class="card" style="width: 18rem;">
-                                <a href="artist.php?id='.$row['id'].'"><img class="card-img-top" src="../../'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
+                                <a href="artist.php?id='.$row['id'].'"><img class="card-img-top" src="../../poster/'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row['name'].'</h5>
                                 </div>

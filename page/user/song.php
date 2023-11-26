@@ -92,9 +92,9 @@
                         <h1 class="text-center">Now Playing</h1>
                         <p class="text-center">'.$lagu['title'].'</p>
                         <p class="text-center">By : '.$lagu['name'].'</p>
-                        <div><img class="card-img-top mx-auto d-block" src="../../'.$lagu['image'].'" alt="Card image cap" style="height: 500px;width:300px;object-fit: cover;"></div>
+                        <div><img class="card-img-top mx-auto d-block" src="../../poster'.$lagu['image'].'" alt="Card image cap" style="height: 500px;width:300px;object-fit: cover;"></div>
                         <div class="text-center pt-2"><audio controls>
-                                    <source src="../../'.$lagu['file'].'" type="audio/mpeg">
+                                    <source src="../../musik/'.$lagu['file'].'" type="audio/mpeg">
                                     </audio></div>
                         
 

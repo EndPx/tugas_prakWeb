@@ -12,12 +12,12 @@ if($cek >0){
     $row = mysqli_fetch_assoc($data);
     $_SESSION["username"] = $username;
     $_SESSION["status"] = "login";
-    if($row["role"]="admin"){
+    if($row["role"]=="admin"){
         $_SESSION["role"]="admin";
         header("location:../page/admin/home.php");
     }else{
         $_SESSION["role"]="user";
-        header("location:../page/user/home.php");
+        header("location:../page/user/songs.php");
     }
     
 }
