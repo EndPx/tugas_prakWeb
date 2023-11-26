@@ -1,18 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<title>Music Website</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tambah Song</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<style>
-		main{
-			min-height:85vh;
-		}
-	</style>
-</head>
-<body>
-    <header class="bg-dark">
+  </head>
+  <body>
+  <header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Music Website</a>
@@ -51,59 +46,58 @@
             </div>
         </nav>
     </header>
-
+    
     <main>
 		<div class="container mt-5">
 			<div class="card text-white bg-secondary mb-3">
 				<div class="card-header">
                     <center>
-					<h2>Data User</h2> 
+					<h2>Tambah Lagu</h2> 
                     <center>
-                    <a class="btn btn-primary " href="tambah.php" role="button">Tambah Data</a>                    
+                                       
 				</div>
-				<div class="card-body">
-					<table class="table table-dark table-striped table-hover">
-						<thead>
-							<tr>
-								<th scope="col">Id</th>
-								<th scope="col">Username</th>
-								<th scope="col">Email</th>
-								<th scope="col">Passowrd</th>
-								<th scope="col">Role</th>
-								<th scope="col">Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-							include '../../core/koneksi.php';
-							$query = mysqli_query($konek, "select * from users");
-							while ($data = mysqli_fetch_array($query)) { ?>
-								<tr>
-									<td><?php echo $data['id']; ?></td>
-									<td><?php echo $data['username']; ?></td>
-									<td><?php echo $data['email']; ?></td>
-									<td><?php echo $data['password']; ?></td>
-									<td><?php echo $data['role']; ?></td>
-									<td>
-										<a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="../../core/hapus.php?id=<?php echo $data['id'] ?>">Delete</a>
-									</td>
-								</tr>
-							<?php } ?>
-						</tbody>
-					</table>
+				<div class="card-body-dark">
+                <form method="POST" action="input_song.php">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Judul Lagu</label>
+    <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    placeholder="Masukkan Judul">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">User id</label>
+    <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    placeholder="Masukkan User id">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Penyanyi</label>
+    <input type="text" name="penyanyi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    placeholder="Masukkan Penyanyi">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Gambar Penyanyi</label>
+    <input type="text" name="gambar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Masukkan gambar penyanyi">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Lagu</label>
+    <input type="text" name="lagu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Masukkan lagu">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Kategori</label>
+    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Masukkan kategori">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">View</label>
+    <input type="text" name="view" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Masukkan view">
+  </div>
+  <br>
+  <center>
+  <button type="login" value="login" class="btn btn-primary">Tambah</button>
+</form>
 				</div>
 			</div>
 		</div>
     </main>
-
-    <footer class="bg-dark">
-        <div class="container text-center text-white">
-            <p>Copyright &copy; <?=date("Y")?></p>
-        </div>
-    </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
 </html>
