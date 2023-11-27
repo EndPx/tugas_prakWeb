@@ -18,9 +18,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">Main</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
@@ -63,6 +60,7 @@
 							<tr>
 								<th scope="col">Id</th>
 								<th scope="col">Name</th>
+								<th scope="col">Bio</th>
 								<th scope="col">image</th>
 								<th scope="col">Action</th>
 							</tr>
@@ -75,9 +73,10 @@
                                 <tr>
                                     <td><?php echo $data['id']; ?></td>
                                     <td><?php echo $data['name']; ?></td>
+                                    <td><?php echo $data['bio']; ?></td>
                                     <td><img src="../../poster/<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
                                     <td>
-                                        <a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
+                                        <a class="btn btn-success" href="editArtist.php?id=<?php echo $data['id'] ?>">Edit</a>
                                         <?php
                                             $queri = mysqli_query($konek, "SELECT artists.id AS artis_id, songs.*, artists.*
                                             FROM songs

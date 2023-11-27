@@ -1,7 +1,7 @@
 <?php
 	include '../../core/koneksi.php';
     $id=$_GET['id'];
-	$query = mysqli_query($konek, "select * from users WHERE id=$id");
+	$query = mysqli_query($konek, "select * from artists WHERE id=$id");
 	$data = mysqli_fetch_array($query);
 ?>
 
@@ -52,46 +52,39 @@
     </header>
     
     <main>
-    <div class="container mt-5">
-        <div class="card text-white bg-secondary mb-3">
-            <div class="card-header">
-                <center>
-                    <h2>Tambah Data</h2> 
-                </center>
-            </div>
-            <div class="card-body">
-                <form method="POST" action="../../core/editUser.php?id=<?php echo $data['id'] ?>">
-                    <div class="form-group">
-                        <label for="Username">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" value="<?php echo $data['username'];?>"
-                               placeholder="Masukkan Username" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" id="email" value="<?php echo $data['email'];?>"
-                               placeholder="Masukkan Email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="Password">Password</label>
-                        <input type="text" name="password" class="form-control" id="password" value="<?php echo $data['password'];?>"
-                               placeholder="Masukkan Password" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="role">Role</label>
-                        <select name="role" class="form-control" id="role">
-                            <option value="admin" <?php echo $data['role'] == 'admin' ? 'selected' : ''; ?>>Admin</option>
-                            <option value="user" <?php echo $data['role'] == 'user' ? 'selected' : ''; ?>>User</option>
-                        </select>
-                    </div>
-                    <br>
+        <div class="container mt-5">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">
                     <center>
-                        <button type="login" value="login" class="btn btn-primary">Tambah</button>
+                        <h2>Add Artist</h2> 
                     </center>
-                </form>
+                </div>
+                <div class="card-body">
+                    <form action="../../core/editArtist.php?id=<?php echo $data['id'] ?>" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $data['name']; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Bio:</label>
+                            <input type="text" class="form-control" id="bio" name="bio" value="<?php echo $data['bio']; ?>">
+                        </div>
+                        <div class="form-group pb-3">
+                            <label for="image">Old Image:</label>
+                            <input type="text" class="form-control" id="image" name="image" value="<?php echo htmlspecialchars($data['image']); ?>" readonly>
+                        </div>
+                        <div class="form-group pb-3">
+                            <label for="image">New Image:</label>
+                            <input type="file" class="form-control" id="image" name="image">
+                        </div>
+                        
+
+                        <button type="submit" class="btn btn-primary mx-auto d-block">Add</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
     <footer class="bg-dark">
         <div class="container text-center text-white">

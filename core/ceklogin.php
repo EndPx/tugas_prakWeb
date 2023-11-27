@@ -14,9 +14,9 @@ if($cek >0){
     $_SESSION["status"] = "login";
     if($row["role"]=="admin"){
         $_SESSION["role"]="admin";
-        header("location:../page/admin/home.php");
+        $_SESSION["id"]=$row["id"];
+        header("location:../page/admin/songs.php");
     }else{
-        $_SESSION["role"]="user";
         header("location:../page/user/songs.php");
     }
     

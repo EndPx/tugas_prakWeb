@@ -17,9 +17,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">Main</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
@@ -90,8 +87,8 @@
                                     </audio></td>
                                 <td><?php echo $data['views']; ?></td>
                                 <td>
-                                    <a class="btn btn-success" href="../../core/edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-                                    <a class="btn btn-danger" href="hapus_song.php?song_id=<?php echo $data['song_id'] ?>">Delete</a>
+                                    <a class="btn btn-success" href="editSong.php?song_id=<?php echo $data['song_id'] ?>">Edit</a>
+                                    <a class="btn btn-danger" href="../../core/hapus_song.php?song_id=<?php echo $data['song_id'] ?>">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>

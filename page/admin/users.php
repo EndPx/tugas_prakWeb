@@ -22,9 +22,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">Main</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
@@ -86,7 +83,7 @@
 									<td><?php echo $data['role']; ?></td>
 									<td>
 										<a class="btn btn-success" href="edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="hapus_user.php?id=<?php echo $data['id'] ?>">Delete</a>
+										<a class="btn btn-danger" href="../../core/hapus_user.php?id=<?php echo $data['id'] ?>">Delete</a>
 									</td>
 								</tr>
 							<?php } ?>

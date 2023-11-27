@@ -17,9 +17,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.php">Main</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
@@ -48,41 +45,38 @@
     </header>
     
     <main>
-		<div class="container mt-5">
-			<div class="card text-white bg-secondary mb-3">
-				<div class="card-header">
+        <div class="container mt-5">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">
                     <center>
-					<h2>Tambah Artis</h2> 
-                    <center>
-                                       
-				</div>
-				<div class="card-body-dark">
-                <form method="POST" action="input_artis.php">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nama Artis</label>
-    <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan Nama">
-    
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Gambar Artis</label>
-    <input type="text" name="gambar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan gambar">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">User id</label>
-    <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Masukkan user">
-  </div>
-  
-  <br>
-  <center>
-  <button type="login" value="login" class="btn btn-primary">Tambah</button>
-</form>
-				</div>
-			</div>
-		</div>
+                        <h2>Add Artist</h2> 
+                    </center>
+                </div>
+                <div class="card-body">
+                    <form action="../../core/inputArtist.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Bio:</label>
+                            <input type="text" class="form-control" id="bio" name="bio" required>
+                        </div>
+                        <div class="form-group pb-3">
+                            <label for="image">Image:</label>
+                            <input type="file" class="form-control" id="image" name="image" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mx-auto d-block">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer class="bg-dark">
+        <div class="container text-center text-white">
+            <p>Copyright &copy; <?=date("Y")?></p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
