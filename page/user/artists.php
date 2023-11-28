@@ -86,7 +86,7 @@ if (empty($_SESSION['username'])) {
 <main>
     <div class="container">
 	<h1 class="text-center">Artists</h1>
-        <div class="row">
+        <div class="row gx-5">
             <?php
             include '../../core/koneksi.php';
             $query = mysqli_query($konek, "SELECT * 

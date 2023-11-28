@@ -92,7 +92,7 @@ $id=$_GET['id'];
 	$query = mysqli_query($konek,"SELECT category from categories where categories.id=$id");
 	$category = $query->fetch_assoc();
 		echo $category['category']?> List</h1>
-        <div class="row">
+        <div class="row gx-5">
             <?php
             include '../../core/koneksi.php';
             $query = mysqli_query($konek, "SELECT songs.id AS song_id, categories.id AS category_id,songs.image AS song_image, songs.*, artists.*, categories.* 
