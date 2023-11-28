@@ -47,7 +47,7 @@ if (empty($_SESSION["role"])) {
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
+								<li><a class="dropdown-item" href="../songs/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -62,11 +62,11 @@ if (empty($_SESSION["role"])) {
             <div class="card text-white bg-secondary mb-3">
                 <div class="card-header">
                     <center>
-                        <h2>Add Artist</h2> 
+                        <h2>Edit Artist</h2> 
                     </center>
                 </div>
                 <div class="card-body">
-                    <form action="../../core/editArtist.php?id=<?php echo $data['id'] ?>" method="post" enctype="multipart/form-data">
+                    <form action="../../core/editArtist.php?id=<?php echo $data['id'] ?>" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" id="name" name="name" value="<?php echo $data['name']; ?>" required>
@@ -77,7 +77,7 @@ if (empty($_SESSION["role"])) {
                         </div>
                         <div class="form-group pb-3">
                             <label for="image">Old Image:</label>
-                            <input type="text" class="form-control" id="image" name="image" value="<?php echo htmlspecialchars($data['image']); ?>" readonly>
+                            <input type="text" class="form-control" value="<?php echo htmlspecialchars($data['image']); ?>" readonly>
                         </div>
                         <div class="form-group pb-3">
                             <label for="image">New Image:</label>
@@ -85,7 +85,7 @@ if (empty($_SESSION["role"])) {
                         </div>
                         
 
-                        <button type="submit" class="btn btn-primary mx-auto d-block">Add</button>
+                        <button type="submit" class="btn btn-primary mx-auto d-block">Edit</button>
                     </form>
                 </div>
             </div>

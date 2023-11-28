@@ -47,7 +47,7 @@ if (empty($_SESSION["role"])) {
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
+								<li><a class="dropdown-item" href="../user/songs.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -62,7 +62,7 @@ if (empty($_SESSION["role"])) {
         <div class="card text-white bg-secondary mb-3">
             <div class="card-header">
                 <center>
-                    <h2>Tambah Data</h2> 
+                    <h2>Edit Data</h2> 
                 </center>
             </div>
             <div class="card-body">
@@ -91,7 +91,7 @@ if (empty($_SESSION["role"])) {
                     </div>
                     <br>
                     <center>
-                        <button type="login" value="login" class="btn btn-primary">Tambah</button>
+                        <button type="login" value="login" class="btn btn-primary">Edit</button>
                     </center>
                 </form>
             </div>

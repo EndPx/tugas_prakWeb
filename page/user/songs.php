@@ -40,9 +40,6 @@ if (empty($_SESSION['username'])) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="songs.php">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="songs.php">Songs</a>
                         </li>
                         <li class="nav-item dropdown">

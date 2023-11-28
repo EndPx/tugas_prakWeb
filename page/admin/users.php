@@ -19,7 +19,7 @@ if (empty($_SESSION["role"])) {
 	</style>
 </head>
 <body>
-    <header class="bg-dark">
+<header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Music Website</a>
@@ -45,7 +45,7 @@ if (empty($_SESSION["role"])) {
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
+								<li><a class="dropdown-item" href="../user/songs.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>

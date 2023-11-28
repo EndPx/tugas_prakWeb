@@ -39,7 +39,7 @@ if (empty($_SESSION["role"])) {
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
+								<li><a class="dropdown-item" href="../user/songs.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -76,7 +76,7 @@ if (empty($_SESSION["role"])) {
                         <?php
                         
                         include '../../core/koneksi.php';
-                        $query = mysqli_query($konek, "SELECT songs.id AS song_id, songs.*, artists.*, categories.* 
+                        $query = mysqli_query($konek, "SELECT songs.id AS song_id, songs.image AS images, songs.*, artists.*, categories.* 
                         FROM songs 
                         INNER JOIN artists ON songs.artist_id = artists.id 
                         INNER JOIN categories ON songs.category_id = categories.id");
@@ -86,7 +86,7 @@ if (empty($_SESSION["role"])) {
                                 <td><?php echo $data['title']; ?></td>
                                 <td><?php echo $data['category']; ?></td>
                                 <td><?php echo $data['name']; ?></td>
-                                <td><img src="../../poster/<?=$data['image']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
+                                <td><img src="../../poster/<?=$data['images']?>" style="width:100px;height: 100px;object-fit: cover;"></td>
                                 <td><audio controls>
                                     <source src="../../musik/<?=$data['file']?>" type="audio/mpeg">
                                     </audio></td>

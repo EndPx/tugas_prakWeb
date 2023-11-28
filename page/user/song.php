@@ -6,7 +6,10 @@ if (empty($_SESSION['username'])) {
 ?>
 
 <?php
+    include '../../core/koneksi.php';
     $id=$_GET['id'];
+    $tambah = "UPDATE songs SET views = views + 1 WHERE id = $id";
+    $result = mysqli_query($konek, $tambah);
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +44,7 @@ if (empty($_SESSION['username'])) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="songs.php">Home</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="songs.php">Songs</a>
                         </li>

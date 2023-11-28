@@ -52,7 +52,7 @@ $data = mysqli_fetch_array($queri);
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
+								<li><a class="dropdown-item" href="../user/songs.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -67,7 +67,7 @@ $data = mysqli_fetch_array($queri);
             <div class="card text-white bg-secondary mb-3">
                 <div class="card-header">
                     <center>
-                        <h2>Tambah Lagu</h2> 
+                        <h2>Edit Lagu</h2> 
                     </center>
                 </div>
                 <div class="card-body">
@@ -86,7 +86,7 @@ $data = mysqli_fetch_array($queri);
                                 if ($query->num_rows > 0) {
                                     while($row = $query->fetch_assoc()) {
                                     echo '
-                                        <option value="'.$row['category_id'].'">'.$row['category'].'</option>
+                                        <option value="'.$row['id'].'">'.$row['category'].'</option>
                                     ';
                                     }
                                 }
@@ -96,29 +96,25 @@ $data = mysqli_fetch_array($queri);
                         <div class="form-group">
                             <label for="artist">Artist:</label>
                             <select class="form-select form-select-sm" name="artist" id="artist" <?php echo $data['artist']; ?> required>
-                            <option selected value="<?php echo $data['artist_id']; ?>"><?php echo $data['artist']; ?></option>
-                            <?php
-                              include '../../core/koneksi.php';
-                              $query = mysqli_query($konek, "SELECT * FROM artists WHERE name!='" . $data['artist'] . "'");
-                              if ($query->num_rows > 0) {
-                                while($row = $query->fetch_assoc()) {
-                                  echo '
-                                      <option value="'.$row['id'].'">'.$row['name'].'</option>
-                                  ';
+                                <option selected value="<?php echo $data['artist_id']; ?>"><?php echo $data['artist']; ?></option>
+                                <?php
+                                include '../../core/koneksi.php';
+                                $query = mysqli_query($konek, "SELECT * FROM artists WHERE name!='" . $data['artist'] . "'");
+                                if ($query->num_rows > 0) {
+                                    while($row = $query->fetch_assoc()) {
+                                    echo '
+                                        <option value="'.$row['id'].'">'.$row['name'].'</option>
+                                    ';
+                                    }
                                 }
-                              }
-                            ?>
+                                ?>
                             </select>
                         </div>
                         <div class="form-group pb-3">
                             <label for="image">Image:</label>
                             <input type="file" class="form-control" id="image" name="image">
                         </div>
-                        <div class="form-group pb-3">
-                            <label for="music">Music:</label>
-                            <input type="file" class="form-control" id="music" name="music">
-                        </div>
-                        <button type="submit" class="btn btn-primary mx-auto d-block">Add</button>
+                        <button type="submit" class="btn btn-primary mx-auto d-block">Edit</button>
                     </form>
                 </div>
             </div>

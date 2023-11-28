@@ -12,7 +12,7 @@ $query=mysqli_query($konek,"DELETE FROM songs where
 id=$id");
 if($query)
 {
-    header("location:songs.php");
+    header("location:../page/admin/songs.php");
 }
 else
 {
