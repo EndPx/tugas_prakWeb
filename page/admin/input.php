@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 include "../../core/koneksi.php";
 $username = $_POST['username'];
 $email = $_POST['email'];

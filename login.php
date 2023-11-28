@@ -7,108 +7,76 @@
     <title>Login Site</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .password-toggle {
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        input[type=password]::-ms-reveal,
-        input[type=password]::-ms-clear {
-            display: none;
-        }
-
-        body {
-            background: url("upload/background-log.jpg") no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 
 <body>
-    <nav class="navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand">
-        <img src="upload/spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top"></a>
-        <div class="d-flex" id="navbarNav">
-            
-            <a class="btn btn-primary" href="register.php">Sign Up</a>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand">
+            <img src="upload/spotipi.PNG" alt="Logo" width="150" height="32" class="d-inline-block align-text-top ps-5"></a>
+            <div class="pe-5" id="navbarNav">
+                <a class="btn btn-primary" href="register.php">Sign Up</a>
+            </div>
         </div>
-    </div>
-    </nav>
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <form class="bg-white p-5 m-5 rounded" method="POST" action="core/ceklogin.php">
-            <h1 class="text-center">Login</h1>
-            <div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container mt-5">
+            <form method="POST" action="core/ceklogin.php">
+                <h1>Login</h1>
                 <?php
-                if (isset($_GET['pesan'])) {
-                    if ($_GET['pesan'] == "gagal") {
-                        echo "Username and password are incorrect!";
-                    } else if ($_GET["pesan"] == "logout") {
-                        echo "You have successfully logged out!";
-                    } else if ($_GET["pesan"] == "belumlogin") {
-                        echo "Please log in first";
-                    }else if ($_GET["pesan"] == "ganti") {
-                        echo "Successfully change password";
-                    }
-                }
-                ?>
-            </div>
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <div class="input-group">
+                        if (isset($_GET['pesan'])) {
+                            if ($_GET['pesan'] == "gagal") {
+                                echo "Username and password are incorrect!";
+                            } else if ($_GET["pesan"] == "logout") {
+                                echo "You have successfully logged out!";
+                            } else if ($_GET["pesan"] == "belumlogin") {
+                                echo "Please log in first";
+                            }else if ($_GET["pesan"] == "ganti") {
+                                echo "Successfully change password";
+                            }
+                        }
+                        ?>
+                <div class="username">
                     <input type="text" class="form-control" name="username" placeholder="Masukkan Username" required />
+                <img src="css/user.svg" alt="">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <div class="input-group">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password" required />
-                    <div class="input-group-append">
-                        <span class="input-group-text password-toggle" onclick="togglePassword()">
-                            <i class="fa fa-eye-slash"></i>
-                        </span>
-                    </div>
+                <div class="password">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan Password" required />
+                <a href="#"><img src="css/eye-off.svg" alt="eye off" id="eye"/></a>
                 </div>
-            </div>
-
-            <div class="form-group">
-            Jika Anda lupa password silahkan  <a href='ganti_pass.php'> Klik Disini </a>
-
-            </div>
-
-<br>
-            <div class="d-grid gap-2"> 
-                <button type="submit" class="btn btn-primary">LOGIN</button>
-            </div>
-            
-        </form>
-    </div>
+                <div class="account">
+                    <p>New here? <a href="register.php">Click here</a></p>
+                
+                </div>
+                <div class="submit">
+                    <button type="submit" class="but-submit">LOGIN</button>
+                </div>
+                <div class="remember">
+                    <a href="ganti_pass.php">Forgotten password?</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    
 
     <script>
-        function togglePassword() {
-            var passwordInput = document.getElementById("password");
-            var eyeIcon = document.querySelector(".password-toggle i");
+        const password = document.getElementById("password");
+        const eye = document.getElementById("eye");
 
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                eyeIcon.classList.remove("fa-eye-slash");
-                eyeIcon.classList.add("fa-eye");
-            } else {
-                passwordInput.type = "password";
-                eyeIcon.classList.remove("fa-eye");
-                eyeIcon.classList.add("fa-eye-slash");
-            }
+        eye.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text"; 
+            eye.src = "css/eye.svg";
+        } else {
+            password.type = "password"; 
+            eye.src = "css/eye-off.svg"; 
         }
+        });
     </script>
 </body>
 
 </html>
-
-
-
-

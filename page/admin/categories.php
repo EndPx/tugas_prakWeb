@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-    <header class="bg-dark">
+<header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Music Website</a>
@@ -33,8 +40,7 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                                
-                                
+								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>

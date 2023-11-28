@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,6 +40,7 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>

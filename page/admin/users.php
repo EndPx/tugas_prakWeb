@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +45,7 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                               
-                                
+								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -82,8 +88,14 @@
 									<td><?php echo $data['password']; ?></td>
 									<td><?php echo $data['role']; ?></td>
 									<td>
-										<a class="btn btn-success" href="edit.php?id=<?php echo $data['id'] ?>">Edit</a>
-										<a class="btn btn-danger" href="../../core/hapus_user.php?id=<?php echo $data['id'] ?>">Delete</a>
+									<?php
+										if ($_SESSION["id"]<$data['id']||$data['role']=="user") {
+											echo '
+												<a class="btn btn-success" href="edit.php?id='.$data['id'].'">Edit</a>
+												<a class="btn btn-danger" href="../../core/hapus_user.php?id='.$data['id'].'">Delete</a>
+											';
+										}
+									?>
 									</td>
 								</tr>
 							<?php } ?>

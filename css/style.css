@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body{
+    min-height: 100vh;
+    background: url('../upload/background-log.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container{
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    width: 30rem;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    color: white;
+    border-radius: 10px;
+    padding: 50px 50px;
+  }
+  
+  .container h1{
+    text-align: center;
+  }
+  
+  .container .username,
+  .container .password{
+    position: relative;
+    width: 100%;
+    height: 2.8rem;
+    margin: 30px 0;
+  }
+  
+  .container .username input,
+  .container .password input{
+    padding: 0 35px 0 25px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    font-size: 1rem;
+    color: white;
+    border: 0.1rem solid rgba(255, 255, 255, 0.29);
+  }
+  
+  .container input::placeholder{
+    color: white;
+  }
+  
+  .container .username img,
+  .container .password img{
+    position: absolute;
+    right: 10px;
+    top: 30%;
+  }
+  
+  .container .account{
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .container .account p a{
+    color: white;
+    font-weight: 600;
+  }
+  
+  .container .submit .but-submit{
+    width: 100%;
+    height: 2.8rem;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .container .remember{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .container .remember label{
+    cursor: pointer;
+  }
+  
+  .container .remember label input{
+    margin-right: 10px;
+    accent-color: white;
+  }
+  
+  .container .remember a{
+    color: white;
+  }
+  
+  .container .remember a::after{
+      content: '';
+      display: block;
+      border-bottom: 1px solid white;
+      transform: scaleX(0);
+      transition: 0.1s;
+  }
+  
+  .container .remember a:hover::after{
+    transform: scaleX(0.89);
+  }
+  
+  input[type=password]::-ms-reveal,
+  input[type=password]::-ms-clear
+  {
+      display: none;
+  }

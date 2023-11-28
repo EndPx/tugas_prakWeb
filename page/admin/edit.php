@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 	include '../../core/koneksi.php';
     $id=$_GET['id'];
 	$query = mysqli_query($konek, "select * from users WHERE id=$id");
@@ -40,8 +47,7 @@
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                               
-                                
+								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>

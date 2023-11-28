@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION['username'])) {
+    header("location:../login.php?pesan=belumlogin");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +15,8 @@
 	<style>
         .card-img-top {
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover .card-img-top {
@@ -21,7 +30,7 @@
     </style>
 </head>
 <body>
-<header class="bg-dark">
+    <header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Music Website</a>
@@ -30,6 +39,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="songs.php">Home</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="songs.php">Songs</a>
                         </li>
@@ -59,11 +71,14 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hi, users
+                                Hi, <?php echo $_SESSION['username'];?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <?php
+                                if (isset($_SESSION["role"])) {
+                                    echo '<li><a class="dropdown-item" href="../admin/songs.php">Admin</a></li>';
+                                }
+                                ?>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
@@ -76,7 +91,7 @@
 <main>
     <div class="container">
         <h1 class="text-center">Song List</h1>
-        <div class="row">
+        <div class="row gx-5">
             <?php
             include '../../core/koneksi.php';
             $query = mysqli_query($konek, "SELECT songs.id AS song_id, categories.id AS category_id, songs.*, artists.*, categories.* 
@@ -87,7 +102,7 @@
             if ($query->num_rows > 0) {
                 while($row = $query->fetch_assoc()) {
                     echo '
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-3 mb-4">
                             <div class="card" style="width: 18rem;">
                                 <a href="song.php?id='.$row['song_id'].'"><img class="card-img-top" src="../../poster/'.$row['image'].'" alt="Card image cap" style="height: 200px;object-fit: cover;"></a>
                                 <div class="card-body">

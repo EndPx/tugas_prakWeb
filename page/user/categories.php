@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION['username'])) {
+    header("location:../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 $id=$_GET['id'];
 ?>
 
@@ -34,6 +41,9 @@ $id=$_GET['id'];
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <a class="nav-link" href="songs.php">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="songs.php">Songs</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -62,11 +72,14 @@ $id=$_GET['id'];
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hi, users
+                                Hi, <?php echo $_SESSION['username'];?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <?php
+                                if (isset($_SESSION["role"])) {
+                                    echo '<li><a class="dropdown-item" href="../admin/songs.php">Admin</a></li>';
+                                }
+                                ?>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>

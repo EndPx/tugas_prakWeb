@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["image"]["tmp_name"]);

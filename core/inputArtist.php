@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 $target_file=basename($_FILES["image"]["name"]);
 $uploadOk=1;
 $imageFileType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_SESSION["role"])) {
+    header("location:../../login.php?pesan=belumlogin");
+}
+?>
+
+<?php
 include '../../core/koneksi.php';
 $song_id = $_GET['song_id'];
 $queri = mysqli_query($konek, "SELECT songs.id AS song_id, categories.category AS category,categories.id AS id_category, artists.name AS artist,artists.id AS artist_id, songs.*, artists.*, categories.* 
@@ -45,8 +52,7 @@ $data = mysqli_fetch_array($queri);
                                 Hi, admin
                             </a>
                             <ul class="dropdown-menu">
-                               
-                                
+								<li><a class="dropdown-item" href="../user/home.php">User</a></li>
                                 <li><a class="dropdown-item" href="../../core/logout.php">Logout</a></li>
                             </ul>
                         </li>
