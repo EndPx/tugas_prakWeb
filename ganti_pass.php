@@ -25,7 +25,7 @@
     
     <main>
         <div class="container mt-5">
-            <form method="POST" action="core/update_php.php">
+            <form method="POST" action="core/update_pass.php">
                 <h1>Change Password</h1>
                 <div>
                     <?php

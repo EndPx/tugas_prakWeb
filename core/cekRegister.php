@@ -15,7 +15,7 @@
           $_SESSION["username"] = $username;
             $_SESSION["status"] = "login";
           $_SESSION["role"]="user";
-          header("location:../page/user/song.php");
+          header("location:../page/user/home.php");
         }
         else
         {
