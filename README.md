@@ -1,2 +1,2 @@
 # tugas_prakWeb
-koneksi:test2;
+koneksi database->test2
